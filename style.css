@@ -1,0 +1,11 @@
+body {
+    background-color: ivory;
+}
+.navbar {
+    background-color: lightsalmon;
+    color: forestgreen;
+}
+footer {
+    background-color: forestgreen;
+    color: lightsalmon;
+}
