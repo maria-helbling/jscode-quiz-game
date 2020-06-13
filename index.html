@@ -14,12 +14,32 @@
           </nav>
     </header>
     <main class="container d-flex justify-content-center mb-5">
-        <div class='mt-5' id="quiz">
-            <h2 class="h2" id='qNum'>Welcome to your JS code quiz!</h2>
-            <h3 class="h3" id='qTxt'></h3>
-            <p id="intro">This si your JS refresher quiz. we play Jeopardy style. You are given and answer and must complete the question. You have 60sec to answer all the questions. Every time you give an incorrect answer you lose 10 sec off your timer. How fast can you be?</p>
-            <butto class='btn w-100' id="starter">START!!</button>
-            <!--<form id='answers'></form>-->
+        <!--main row-->
+        <div class="row">
+            <!--col 1 of 2-->
+            <div class="col-12 col-sm-8">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="h2" id='qNum'>Welcome to your JS code quiz!</h2>
+                        <h3 class="h3" id='qTxt'></h3>
+                        <p id="intro">This si your JS refresher quiz. we play Jeopardy style. You are given and answer and must complete the question. You have 60sec to answer all the questions. Every time you give an incorrect answer you lose 10 sec off your timer. How fast can you be?</p>
+                        <h4 class="h4" id='clue'></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-12' id="quiz">
+                        <butto class='btn w-100' id="starter">START!!</button>
+                    </div>
+                </div>
+            </div>
+            <!--col 2 of 2-->
+            <div class="col-12 col-sm-4" id='Lifelines'>
+                <h3 class="h3">Lifelines</h3>
+                <p>These are your lifelines, use them wisely</p>
+                <button class="btn w-100" id="friend">Call a friend</button>
+                <button class="btn w-100" id="5050">50/50</button>
+                <button class="btn w-100" id="clue">Extra clue</button>
+            </div>
         </div>
     </main>
     <footer class='footer mb-0 fixed-bottom'>
