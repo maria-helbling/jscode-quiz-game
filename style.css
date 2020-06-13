@@ -13,7 +13,6 @@ footer {
 
 .btn {
     border: 3px solid darkmagenta;
-    border-radius: 10%;
     color: darkmagenta;
 }
 
@@ -21,4 +20,9 @@ footer {
     background-color:darkmagenta;
     opacity: 0.7;
     color: forestgreen
+}
+
+form {
+    border-style: solid;
+    border-color: fuchsia;
 }
