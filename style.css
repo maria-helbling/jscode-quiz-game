@@ -34,3 +34,7 @@ form {
 #friend:hover, #clue:hover, #fifty:hover {
     background-color: lightsalmon;
 }
+
+#time {
+    color: forestgreen;
+}

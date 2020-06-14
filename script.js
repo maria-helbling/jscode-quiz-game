@@ -8,63 +8,140 @@ let clueBtn = document.querySelector('#clue');
 let fiftyBtn = document.querySelector('#fifty');
 let friendBtn = document.querySelector('#friend');
 let rules = document.querySelector('#rules')
+let timeTxt = document.querySelector('#time')
+let timer = document.querySelector('#timer')
+let btn0 = document.querySelector('#btn0')
+let btn1 = document.querySelector('#btn1')
+let btn2 = document.querySelector('#btn2')
+let btn3 = document.querySelector('#btn3')
 let q;
 
 let questions = {
-    1: {q:`some q`,
-        a:[``,``,``,``],
+    0: {
+        q:`some q0`,
+        a:[`a1`,`a2`,`a3`,`a4`],
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 2,
-        5050:[2,3]},
-    2: {},
-    3: {},
-    4: {},
-    5: {},
-    6: {},
-    7: {},
-    8: {},
-    9: {},
-    10: {}
+        friend: 4,
+        fifty:[2,3]
+        },
+    1: {
+        q:`some q1`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+        },
+    2: {
+        q:`some q2`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+        },
+    3: {
+        q:`some q3`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+        },
+    4: {
+        q:`some q4`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+        },
+    5: {
+        q:`some q5`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+    },
+    6: {
+        q:`some q6`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+    },
+    7: {
+        q:`some q7`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+    },
+    8: {
+        q:`some q8`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+    },
+    9: {
+        q:`some q9`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+    },
+    10: {
+        q:`some q10`,
+        a:[`a1`,`a2`,`a3`,`a4`],
+        correct: 1,
+        asked: false,
+        clue:`some clue`,
+        friend: 4,
+        fifty:[2,3]
+    }
 }
 
 strtBtn.addEventListener('click',function(){
 
     //hide intro text and button to reveal quiz text and answer buttons
-    strtBtn.style.display = 'none';
+    strtBtn.classList.add('d-none');
     intro.style.display = 'none';
     rules.style.display = 'none';
     clueBtn.classList.remove('d-none');
     fiftyBtn.classList.remove('d-none');
     friendBtn.classList.remove('d-none');
+    timeTxt.classList.remove('d-none');
+    btn0.classList.remove('d-none');
+    btn1.classList.remove('d-none');
+    btn2.classList.remove('d-none');
+    btn3.classList.remove('d-none');
 
-
-    q=1;
+    q=0;
     quizMaster();
 })
 
 let quizMaster = () => {
     qTitel.textContent = `Q${q}`;
-    qText.textContent = `Here's a question for you with three answer options`;
-    let btn0 = document.createElement('button');
-    quiz.appendChild(btn0);
-    btn0.classList.add('btn');
-    btn0.classList.add('w-50');
-    btn0.id = '1';
-    btn0.textContent = `Answer`
-    let btn1 = document.createElement('button');
-    quiz.appendChild(btn1);
-    btn1.classList.add('btn');
-    btn1.classList.add('w-50');
-    btn1.id = '1';
-    btn1.textContent = `Answer`
-    let btn2 = document.createElement('button');
-    quiz.appendChild(btn2);
-    btn2.classList.add('btn');
-    btn2.classList.add('w-50');
-    btn2.id = '2';
-    btn2.textContent = `wrong answer`
-    
+    qText.textContent = `Here's a question for you with four answer options`;
+    btn0.textContent = questions[0]['a'][0]
+
+     
 }
 
