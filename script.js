@@ -6,6 +6,7 @@ let quiz = document.querySelector('#quiz');
 let strtBtn = document.querySelector('#starter');
 let intro = document.querySelector('#intro');
 let clueBtn = document.querySelector('#clue');
+let clueTxt = document.querySelector('#clueTxt');
 let fiftyBtn = document.querySelector('#fifty');
 let friendBtn = document.querySelector('#friend');
 let rules = document.querySelector('#rules');
@@ -28,7 +29,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
         },
     1: {
@@ -37,7 +38,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
         },
     2: {
@@ -46,7 +47,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
         },
     3: {
@@ -55,7 +56,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
         },
     4: {
@@ -64,7 +65,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
         },
     5: {
@@ -73,7 +74,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
     },
     6: {
@@ -82,7 +83,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
     },
     7: {
@@ -91,7 +92,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
     },
     8: {
@@ -100,7 +101,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
     },
     9: {
@@ -109,7 +110,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
     },
     10: {
@@ -118,7 +119,7 @@ let questions = {
         correct: 1,
         asked: false,
         clue:`some clue`,
-        friend: 4,
+        friend: 0,
         fifty:[2,3]
     }
 }
@@ -150,7 +151,7 @@ let pickQ = () => {
 
 let checkAnswer = () => {
     let correctBtn = document.querySelector('.correct');
-    if (clickedBtn.textContent !== questions[q]['a'][questions[q]['correct']]) { sec-=10 }
+    if (clickedBtn.textContent !== questions[q]['a'][questions[q]['correct']]) {sec-=10}
     correctBtn.style.background='forestgreen';
     correctBtn.style.color = 'white';
     setTimeout(function(){
@@ -162,6 +163,30 @@ let checkAnswer = () => {
         btn2.disabled = 'false';
         btn3.disabled = 'false';
     },1500)
+}
+
+let callFriend = () => {
+    let num = Math.floor(Math.random()*5)+1;
+    if (num<5) {
+        clueTxt.textContent = `I think it is "${questions[q]['a'][questions[q]['correct']]}"`;
+    } else {
+        clueTxt.textContent = `I think it is "${questions[q]['a'][questions[q]['friend']]}"`;
+    }
+    friendBtn.disabled = true;
+}
+
+let fifty = () => {
+    let num1 = questions[q]['fifty'][0];
+    let num2 = questions[q]['fifty'][1];
+    document.querySelector(`#btn${num1}`).disabled=true;
+    document.querySelector(`#btn${num2}`).disabled=true;
+    fiftyBtn.disabled = true;
+    sec-=5;
+}
+
+let clue = () => {
+    clueTxt.textContent = questions[q]['clue'];
+    clueBtn.disabled = true;
 }
 
 strtBtn.addEventListener('click',function(){
@@ -212,8 +237,15 @@ let quizMaster = () => {
         clickedBtn = btn3;
         checkAnswer();
     });
-    clueBtn.addEventListener('click',function(){});
-    fiftyBtn.addEventListener('click',function(){});
-    friendBtn.addEventListener('click',function(){});
+    clueBtn.addEventListener('click',function(){ 
+        clue();
+    });
+    fiftyBtn.addEventListener('click',function(){
+        fifty();
+    });
+    friendBtn.addEventListener('click',function(){
+        callFriend();
+    });
+
 }
 
