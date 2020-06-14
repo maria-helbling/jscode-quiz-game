@@ -19,6 +19,7 @@ let whatTxt = document.querySelector('#what');
 // initialize global variables
 let q;
 let sec;
+let clickedBtn;
 // includes all the questions
 let questions = {
     0: {
@@ -147,6 +148,22 @@ let pickQ = () => {
     return x
 }
 
+let checkAnswer = () => {
+    let correctBtn = document.querySelector('.correct');
+    if (clickedBtn.textContent !== questions[q]['a'][questions[q]['correct']]) { sec-=10 }
+    correctBtn.style.background='forestgreen';
+    correctBtn.style.color = 'white';
+    setTimeout(function(){
+        correctBtn.style.background = 'none';
+        correctBtn.style.color = 'darkmagenta';
+        correctBtn.classList.remove('correct');
+        btn0.disabled = 'false';
+        btn1.disabled = 'false';
+        btn2.disabled = 'false';
+        btn3.disabled = 'false';
+    },1500)
+}
+
 strtBtn.addEventListener('click',function(){
 
     //hide intro text and button to reveal quiz text and answer buttons
@@ -171,12 +188,32 @@ strtBtn.addEventListener('click',function(){
 let quizMaster = () => {
     
     q=pickQ()
+    let correct = questions[q]['correct'];
     qTitel.textContent = `Q${q}`;
     qText.textContent = questions[q]['q'];
     btn0.textContent = questions[q]['a'][0];
     btn1.textContent = questions[q]['a'][1];
     btn2.textContent = questions[q]['a'][2];
     btn3.textContent = questions[q]['a'][3];
-     
+    document.querySelector(`#btn${correct}`).classList.add('correct');
+    btn0.addEventListener('click',function(){
+        clickedBtn = btn0;
+        checkAnswer();
+    });
+    btn1.addEventListener('click',function(){
+        clickedBtn = btn1;
+        checkAnswer();
+    });
+    btn2.addEventListener('click',function(){
+        clickedBtn = btn2;
+        checkAnswer();
+    });
+    btn3.addEventListener('click',function(){
+        clickedBtn = btn3;
+        checkAnswer();
+    });
+    clueBtn.addEventListener('click',function(){});
+    fiftyBtn.addEventListener('click',function(){});
+    friendBtn.addEventListener('click',function(){});
 }
 
