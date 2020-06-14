@@ -1,21 +1,25 @@
+//grab my DOM objects
 let qTitel = document.querySelector('#qNum');
 let qText = document.querySelector('#qTxt');
 let answrForm = document.querySelector('#answers');
-let quiz = document.querySelector('#quiz')
+let quiz = document.querySelector('#quiz');
 let strtBtn = document.querySelector('#starter');
 let intro = document.querySelector('#intro');
 let clueBtn = document.querySelector('#clue');
 let fiftyBtn = document.querySelector('#fifty');
 let friendBtn = document.querySelector('#friend');
-let rules = document.querySelector('#rules')
-let timeTxt = document.querySelector('#time')
-let timer = document.querySelector('#timer')
-let btn0 = document.querySelector('#btn0')
-let btn1 = document.querySelector('#btn1')
-let btn2 = document.querySelector('#btn2')
-let btn3 = document.querySelector('#btn3')
+let rules = document.querySelector('#rules');
+let timeTxt = document.querySelector('#time');
+let timer = document.querySelector('#timer');
+let btn0 = document.querySelector('#btn0');
+let btn1 = document.querySelector('#btn1');
+let btn2 = document.querySelector('#btn2');
+let btn3 = document.querySelector('#btn3');
+let what = document.querySelector('#what');
+// initialize global variables
 let q;
-
+let sec;
+// includes all the questions
 let questions = {
     0: {
         q:`some q0`,
@@ -118,6 +122,18 @@ let questions = {
     }
 }
 
+function setTime() {
+    var timerInterval = setInterval(function() {
+      sec--;
+      timer.textContent = sec;
+  
+      if(sec <= 0) {
+        clearInterval(timerInterval);
+      }
+  
+    }, 1000);
+  }
+
 strtBtn.addEventListener('click',function(){
 
     //hide intro text and button to reveal quiz text and answer buttons
@@ -132,12 +148,15 @@ strtBtn.addEventListener('click',function(){
     btn1.classList.remove('d-none');
     btn2.classList.remove('d-none');
     btn3.classList.remove('d-none');
+    what.classList.remove('d-none');
 
-    q=0;
+    sec=120;
     quizMaster();
+    setTime();
 })
 
 let quizMaster = () => {
+    
     qTitel.textContent = `Q${q}`;
     qText.textContent = `Here's a question for you with four answer options`;
     btn0.textContent = questions[0]['a'][0]
