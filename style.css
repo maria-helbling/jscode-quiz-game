@@ -26,3 +26,11 @@ form {
     border-style: solid;
     border-color: fuchsia;
 }
+
+#friend, #clue, #fifty {
+    border: 3px solid salmon;
+} 
+
+#friend:hover, #clue:hover, #fifty:hover {
+    background-color: lightsalmon;
+}

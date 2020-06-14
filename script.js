@@ -5,16 +5,17 @@ let quiz = document.querySelector('#quiz')
 let strtBtn = document.querySelector('#starter');
 let intro = document.querySelector('#intro');
 let clueBtn = document.querySelector('#clue');
-let Btn50 = document.querySelector('#50');
+let fiftyBtn = document.querySelector('#fifty');
 let friendBtn = document.querySelector('#friend');
+let rules = document.querySelector('#rules')
 let q;
 
 let questions = {
     1: {q:`some q`,
         a:[``,``,``,``],
         correct: 1,
-        asked: false
-        clue:`some clue`
+        asked: false,
+        clue:`some clue`,
         friend: 2,
         5050:[2,3]},
     2: {},
@@ -33,6 +34,11 @@ strtBtn.addEventListener('click',function(){
     //hide intro text and button to reveal quiz text and answer buttons
     strtBtn.style.display = 'none';
     intro.style.display = 'none';
+    rules.style.display = 'none';
+    clueBtn.classList.remove('d-none');
+    fiftyBtn.classList.remove('d-none');
+    friendBtn.classList.remove('d-none');
+
 
     q=1;
     quizMaster();

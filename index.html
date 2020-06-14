@@ -23,7 +23,7 @@
                         <h2 class="h2" id='qNum'>Welcome to your JS code quiz!</h2>
                         <h3 class="h3" id='qTxt'></h3>
                         <p id="intro">This si your JS refresher quiz. we play Jeopardy style. You are given and answer and must complete the question. You have 60sec to answer all the questions. Every time you give an incorrect answer you lose 10 sec off your timer. How fast can you be?</p>
-                        <h4 class="h4" id='clue'></h4>
+                        <h4 class="h4" id='clueTxt'></h4>
                     </div>
                 </div>
                 <div class="row">
@@ -35,10 +35,15 @@
             <!--col 2 of 2-->
             <div class="col-12 col-sm-4" id='Lifelines'>
                 <h3 class="h3">Lifelines</h3>
-                <p>These are your lifelines, use them wisely</p>
-                <button class="btn w-100" id="friend">Call a friend</button>
-                <button class="btn w-100" id="5050">50/50</button>
-                <button class="btn w-100" id="clue">Extra clue</button>
+                <p>These are your one-off lifelines, use them wisely!</p>
+                <ul id="rules">
+                    <li><span class='font-weight-bold'>Call a friend</span> - gives you a suggestion, which is correct 80% of the time</li>
+                    <li><span class='font-weight-bold'>50/50</span> - removes two wrong answers, but you also lose 5 sec</li>
+                    <li><span class='font-weight-bold'>Clue</span> - gives you an additional clue for free</li>
+                </ul>
+                <button class="btn w-100 d-none" id="friend">Call a friend</button>
+                <button class="btn w-100 d-none" id="fifty">50/50</button>
+                <button class="btn w-100 d-none" id="clue">Clue</button>
             </div>
         </div>
     </main>
