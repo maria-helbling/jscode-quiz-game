@@ -18,6 +18,7 @@
         <div class="row">
             <!--col 1 of 2-->
             <div class="col-12 col-sm-8">
+                <!--nested row 1 of 3-->
                 <div class="row">
                     <div class="col-12">
                         <h2 class="h2" id='qNum'>Welcome to your JS code quiz!</h2>
@@ -27,12 +28,13 @@
                         <p class="h3 d-none" id='what'>What is a ... ?</p>
                     </div>
                 </div>
+                <!--nested row 2 of 3-->
                 <div class="row">
                     <div class='col-12 mb-4' id="quiz">
                         <div class="row">
                             <butto class='btn w-100' id='starter'>START</button>
                         </div>
-                        <div class="row">
+                        <div class="row" id='answerBtnDiv'>
                             <button class="btn w-50 d-none" id="btn0">txt</button>
                             <button class="btn w-50 d-none" id="btn1">txt</button>
                             <button class="btn w-50 d-none" id="btn2">txt</button>
@@ -40,16 +42,17 @@
                         </div>
                     </div>
                 </div>
+                <!--nested row 3 of 3-->
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
-                        <h3 class="h3 font-weight-bold d-none p-2" id='time'>Time/Score : <span id='timer'>120</span></h3>
+                    <div class="col-12 d-flex justify-content-center p-0">
+                        <h3 class="h3 font-weight-bold d-none" id='time'>Time/Score : <span id='timer'>120</span></h3>
                     </div>
                 </div>
             </div>
             <!--col 2 of 2-->
             <div class="col-12 col-sm-4" id='Lifelines'>
                 <h3 class="h3">Lifelines</h3>
-                <p>These are your one-off lifelines, use them wisely!</p>
+                <p>Use them wisely!</p>
                 <ul id="rules">
                     <li><span class='font-weight-bold'>Call a friend</span> - gives you a suggestion, which is correct 80% of the time</li>
                     <li><span class='font-weight-bold'>50/50</span> - removes two wrong answers, but you also lose 5 sec</li>
