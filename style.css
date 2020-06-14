@@ -22,11 +22,6 @@ footer {
     color: forestgreen
 }
 
-form {
-    border-style: solid;
-    border-color: fuchsia;
-}
-
 #friend, #clue, #fifty {
     border: 3px solid salmon;
 } 
@@ -37,4 +32,8 @@ form {
 
 #time {
     color: forestgreen;
+}
+
+#what {
+    color: darkmagenta;
 }

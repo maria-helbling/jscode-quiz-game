@@ -15,7 +15,7 @@ let btn0 = document.querySelector('#btn0');
 let btn1 = document.querySelector('#btn1');
 let btn2 = document.querySelector('#btn2');
 let btn3 = document.querySelector('#btn3');
-let what = document.querySelector('#what');
+let whatTxt = document.querySelector('#what');
 // initialize global variables
 let q;
 let sec;
@@ -134,6 +134,19 @@ function setTime() {
     }, 1000);
   }
 
+let pickQ = () => {
+    let found = false;
+    let x;
+    while (!found) {
+        x = Math.floor(Math.random()*11);
+        if (!questions[x]['asked']) {
+            questions[x]['asked']=true
+            found=true
+        }
+    }
+    return x
+}
+
 strtBtn.addEventListener('click',function(){
 
     //hide intro text and button to reveal quiz text and answer buttons
@@ -148,8 +161,8 @@ strtBtn.addEventListener('click',function(){
     btn1.classList.remove('d-none');
     btn2.classList.remove('d-none');
     btn3.classList.remove('d-none');
-    what.classList.remove('d-none');
-
+    whatTxt.classList.remove('d-none');
+    //call timer and quizing functions
     sec=120;
     quizMaster();
     setTime();
@@ -157,10 +170,13 @@ strtBtn.addEventListener('click',function(){
 
 let quizMaster = () => {
     
+    q=pickQ()
     qTitel.textContent = `Q${q}`;
-    qText.textContent = `Here's a question for you with four answer options`;
-    btn0.textContent = questions[0]['a'][0]
-
+    qText.textContent = questions[q]['q'];
+    btn0.textContent = questions[q]['a'][0];
+    btn1.textContent = questions[q]['a'][1];
+    btn2.textContent = questions[q]['a'][2];
+    btn3.textContent = questions[q]['a'][3];
      
 }
 
