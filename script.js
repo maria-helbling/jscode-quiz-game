@@ -223,9 +223,8 @@ function setTime() {
       sec--;
       timer.textContent = sec;
   
-      if(sec <= 0) {
+      if(sec <= 0 || qNumAsked>=10) {
         clearInterval(timerInterval);
-        console.log('done')
       }
   
     }, 1000);

@@ -22,6 +22,10 @@ footer {
     color: forestgreen
 }
 
+.oddRow {
+    background-color: lightsalmon;
+}
+
 #friend, #clue, #fifty {
     border: 3px solid salmon;
 } 
@@ -34,6 +38,6 @@ footer {
     color: forestgreen;
 }
 
-#what {
+#what, #aliasTitle, #scoreTitle {
     color: darkmagenta;
 }
