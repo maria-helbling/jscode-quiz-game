@@ -22,6 +22,10 @@ footer {
     color: forestgreen
 }
 
+.btn:active {
+    box-shadow: none;
+}
+
 #friend, #clue, #fifty {
     border: 3px solid salmon;
 } 

@@ -63,67 +63,157 @@ let questions = {
         fifty:[0,1]
         },
     4: {
-        q:`some q4`,
-        a:[`a1`,`a2`,`a3`,`a4`],
-        correct: 1,
+        q:`A way to store values`,
+        a:[`a variable`,`a string`,`a function`,`a method`],
+        correct: 0,
         asked: false,
-        clue:`some clue`,
-        friend: 0,
+        clue:`In maths often denoted with x or y`,
+        friend: 1,
         fifty:[2,3]
         },
     5: {
-        q:`some q5`,
-        a:[`a1`,`a2`,`a3`,`a4`],
-        correct: 1,
+        q:`A way to choose, which block of code runs.`,
+        a:[`a conditional statement`,`a loop`,`a logical operator`,`a function`],
+        correct: 0,
         asked: false,
-        clue:`some clue`,
-        friend: 0,
-        fifty:[2,3]
+        clue:`Written with an if-else or switch statement`,
+        friend: 2,
+        fifty:[1,3]
         },
     6: {
-        q:`some q6`,
-        a:[`a1`,`a2`,`a3`,`a4`],
-        correct: 1,
+        q:`A way to do something repeatedly a set number of times`,
+        a:[`a variable`,`a function`,`a conditional statement`,`a loop`],
+        correct: 3,
         asked: false,
-        clue:`some clue`,
-        friend: 0,
-        fifty:[2,3]
+        clue:`There are many versions of this: for, while, case etc`,
+        friend: 2,
+        fifty:[0,1]
         },
     7: {
-        q:`some q7`,
-        a:[`a1`,`a2`,`a3`,`a4`],
+        q:`A named piece of code that performs a specific task`,
+        a:[`a loop`,`a function`,`an array`,`a boolean`],
         correct: 1,
         asked: false,
-        clue:`some clue`,
+        clue:`It optionally takes parameters and may return a value`,
         friend: 0,
         fifty:[2,3]
         },
     8: {
-        q:`some q8`,
-        a:[`a1`,`a2`,`a3`,`a4`],
-        correct: 1,
+        q:`This is an increment operator`,
+        a:[`++`,`&&`,`||`,`""`],
+        correct: 0,
         asked: false,
-        clue:`some clue`,
-        friend: 0,
-        fifty:[2,3]
+        clue:`increases a numerical value by 1`,
+        friend: 2,
+        fifty:[1,3]
         },
     9: {
-        q:`some q9`,
-        a:[`a1`,`a2`,`a3`,`a4`],
-        correct: 1,
+        q:`Logical operator where both sides must be true to evaluate to true`,
+        a:[`if-else`,`||`,`&&`,`do-While`],
+        correct: 2,
         asked: false,
-        clue:`some clue`,
+        clue:`Known as logical and`,
         friend: 0,
-        fifty:[2,3]
+        fifty:[1,3]
         },
     10: {
-        q:`some q10`,
-        a:[`a1`,`a2`,`a3`,`a4`],
+        q:`JS refers to each tab of the browser as this.`,
+        a:[`a document`,`a tab`,`a window`,`a DOM`],
+        correct: 2,
+        asked: false,
+        clue:`it is the parent element of document`,
+        friend: 3,
+        fifty:[0,1]
+        },
+    11: {
+        q:`Every item in the DOM tree is called this.`,
+        a:[`an element`,`a node`,`a variable`,`a DOM`],
         correct: 1,
         asked: false,
-        clue:`some clue`,
+        clue:`there are two types: element and text`,
+        friend: 2,
+        fifty:[0,3]
+        },
+    12: {
+        q:`Prints numbers 1 through 3 to console.`,
+        a:[`if (number<4) {console.log(number)}`,`for (i=0; i<3; i++){console.log(i+1)}`,`console.log(1,2,3)`,`1+2+3`],
+        correct: 1,
+        asked: false,
+        clue:`It is a loop.`,
+        friend: 2,
+        fifty:[0,3]
+        },
+    13: {
+        q:`Makes an HTML item text color red`,
+        a:[`node.style.color = 'red'`,`node.style.textColor = 'red'`,`node.value = 'red'`,`node.makeText(red)`],
+        correct: 0,
+        asked: false,
+        clue:`text color is under the style attribute of a node`,
+        friend: 3,
+        fifty:[1,2]
+        },
+    14: {
+        q:`Adds 'nuts' to the end of favFoods array.`,
+        a:[`favFoods.pop('nuts')`,`favFoods.end('nuts')`,`favFoods += 'nuts'`, `favFoods.push('nuts')`],
+        correct: 3,
+        asked: false,
+        clue:`Sounds like you are squeezing something in there.`,
+        friend: 1,
+        fifty:[0,2]
+        },
+    15: {
+        q:`Evaluates to 10`,
+        a:[`Math.random()*10`,`Math.round(10.8)`,`Math.ceil(10.8)`,`Math.floor(10.8)`],
+        correct: 3,
+        asked: false,
+        clue:`Always rounds down to the nearest integer`,
+        friend: 2,
+        fifty:[0,1]
+        },
+    16: {
+        q:`This is a falsy value.`,
+        a:[`0`,`'text'`,`-10`,`true`],
+        correct: 0,
+        asked: false,
+        clue:`1 would be truthy.`,
+        friend: 2,
+        fifty:[1,3]
+        },
+    17: {
+        q:`This expression stops a function's code from running`,
+        a:[`break`,`stop`,`return`,`exit`],
+        correct: 2,
+        asked: false,
+        clue:`It can be omitted in arrow functions`,
         friend: 0,
-        fifty:[2,3]
+        fifty:[1,2]
+        },
+    18: {
+        q:`This expression evaluates to true.`,
+        a:[`5 === '5'`,`5 == '5'`,`5 !== '5'`,`5 >= '5'`],
+        correct: 1,
+        asked: false,
+        clue:`This expression doesn't consider data type when comparing`,
+        friend: 2,
+        fifty:[0,3]
+        },
+    19: {
+        q:`The scope of variables that can be accessed in all parts of the script.`,
+        a:[`functional`,`absolute`,`global`,`local`],
+        correct: 2,
+        asked: false,
+        clue:`These are declared outside any functions`,
+        friend: 3,
+        fifty:[0,1]
+        },
+    20: {
+        q:`These are optionally added as inputs when declaring functions`,
+        a:[`ideas`,`numbers`,`variables`,`parameters`],
+        correct: 3,
+        asked: false,
+        clue:`Also known as arguments`,
+        friend: 2,
+        fifty:[0,1]
         }
 }
 
