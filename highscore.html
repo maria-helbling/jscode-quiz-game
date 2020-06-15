@@ -9,13 +9,45 @@
 </head>
 <body>
     <header>
-        <nav class="navbar d-flex justify-content-center">
-            <a class="navbar-brand" href="index.html" style='color:forestgreen; font-weight: bolder;' >JS Code Quiz</a>
+        <nav class="navbar d-flex justify-content-center mb-4">
+            <a class="navbar-brand" href="index.html" style='color:forestgreen; font-weight: bolder;' >JS Code Quiz: Scores</a>
         </nav>
     </header>
+
     <main class="container">
-        <h1>Hello</h1>
+        <!-- row 1 of 2 -->
+        <div class="row">
+            <!-- col 1 of 2 -->
+            <div class="col-12 col-sm-8">
+                <!-- row 1 of 2, for title -->
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="h2">High Scores</h2>
+                    </div>
+                </div>
+                <!-- row 2 of 2, includes the high scores table -->
+                <div class="row" id="scoreTableDiv">
+                    <p>Table goes here</p>
+                </div>
+            </div>
+            <!-- col 2 of 2 -->
+            <div class="col-12 col-sm-4">
+                <h3 class="h3">Comp result - explained</h3>
+                <br>
+                <p>The computer randomly picks answers (so gets them right 1/4 of the time), and doesn't slow down to read the questions.</p>
+            </div>
+        </div>
+        <!-- row 2 of 2 -->
+        <div class="row">
+            <!-- col 1 of 1, takes user name and offers a chance to try again -->
+            <div class="col-12 col-sm-8">
+                <input type="text" class="form-control mb-2" id="alias" placeholder="Enter an alias">
+                <button type="submit" class="btn" id="aliasBtn">Submit</button>
+                <button class="btn d-none w-100" id="againBtn">Try better!</button>
+            </div>
+        </div>
     </main>
+
     <footer class='footer mb-0 fixed-bottom'>
         <p class="text-center p-4 mb-0">&copy; 2020 Maria Helbling</p>
     </footer>

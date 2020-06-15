@@ -20,20 +20,24 @@
             <div class="col-12 col-sm-8">
                 <!--nested row 1 of 3-->
                 <div class="row">
+                    <!-- col 1 of 1, instructions and after start question text -->
                     <div class="col-12">
                         <h2 class="h2" id='qNum'>Welcome to your JS code quiz!</h2>
                         <h3 class="h4" id='qTxt'></h3>
                         <p id="intro">We play Jeopardy/Millionaire. You are given and answer and must complete the question "What is ...?". You have three lifelines (see on the right). You have 120sec to answer all the questions. Incorrect answers deduct 10 sec. How fast are you?</p>
                         <h4 class="h4" id='clueTxt'></h4>
-                        <p class="h3 d-none" id='what'>What is a ... ?</p>
+                        <p class="h3 d-none" id='what'>What is ... ?</p>
                     </div>
                 </div>
                 <!--nested row 2 of 3-->
                 <div class="row">
+                    <!-- col 1 of 1 -->
                     <div class='col-12 mb-4' id="quiz">
+                        <!-- start button, hidden once clicked -->
                         <div class="row">
                             <butto class='btn w-100' id='starter'>START</button>
                         </div>
+                        <!-- answer buttons, visible after start is clicked -->
                         <div class="row" id='answerBtnDiv'>
                             <button class="btn w-50 d-none" id="btn0">txt</button>
                             <button class="btn w-50 d-none" id="btn1">txt</button>
@@ -53,11 +57,13 @@
             <div class="col-12 col-sm-4" id='Lifelines'>
                 <h3 class="h3">Lifelines</h3>
                 <p>Use them wisely!</p>
+                <!-- rules are hidden after start -->
                 <ul id="rules">
                     <li><span class='font-weight-bold'>Call a friend</span> - gives you a suggestion, which is correct 80% of the time</li>
                     <li><span class='font-weight-bold'>50/50</span> - removes two wrong answers, but you also lose 5 sec</li>
                     <li><span class='font-weight-bold'>Clue</span> - gives you an additional clue for free</li>
                 </ul>
+                <!-- lifeline buttons become visible once quiz starts -->
                 <button class="btn w-100 d-none" id="friend">Call a friend</button>
                 <button class="btn w-100 d-none" id="fifty">50/50</button>
                 <button class="btn w-100 d-none" id="clue">Clue</button>
