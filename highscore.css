@@ -5,9 +5,12 @@ h4 {
 .list-group-item  {
     background: none;
     border-style: none;
-
+    border-radius: 0%;
+}
+.list-group {
+    border-radius: 0%;
 }
 
-.oddRow {
+.evenRow {
     background-color: lightsalmon;
 }

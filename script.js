@@ -251,6 +251,7 @@ let checkAnswer = () => {
     // let correctBtn = document.querySelector('.correct');
     let correctBtn = document.querySelector(`[data-index="${questions[q]['correct']}"]`);
     console.log(correctBtn);
+    //TODO: not working, always subtracts 10 !?
     if (clickedBtn.getAttribute('data-index') !== questions[q]['correct']) {sec-=10} //must  add min of sec and 10 if less secs left
     correctBtn.style.border='10px solid forestgreen';
     // wait to display correct answer
