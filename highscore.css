@@ -1,0 +1,13 @@
+h4 {
+    color: darkmagenta;
+}
+
+.list-group-item  {
+    background: none;
+    border-style: none;
+
+}
+
+.oddRow {
+    background-color: lightsalmon;
+}

@@ -225,6 +225,8 @@ function setTime() {
   
       if(sec <= 0 || qNumAsked>=10) {
         clearInterval(timerInterval);
+        localStorage.setItem('newScore', 0);
+        window.location.href = 'highscore.html';
       }
   
     }, 1000);
@@ -267,6 +269,8 @@ let checkAnswer = () => {
         if (qNumAsked>=10) {
             score = sec;
             console.log(score);
+            localStorage.setItem('newScore', score);
+            window.location.href = 'highscore.html';
         } else {
             quizMaster();
         }
@@ -302,7 +306,7 @@ strtBtn.addEventListener('click',function(){
     });
 })
 
-// presents questions and waits for reply
+// presents questions
 let quizMaster = () => {
         q=pickQ();
         let correct = questions[q]['correct'];

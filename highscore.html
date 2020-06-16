@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="highscore.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,38 +20,46 @@
         <div class="row">
             <!-- col 1 of 2 -->
             <div class="col-12 col-sm-8">
-                <!-- row 1 of 2, for title -->
+                <!-- nested row 1 of 3, for title -->
                 <div class="row">
                     <div class="col-12 p-0">
                         <h2 class="h2">High Scores</h2>
                     </div>
                 </div>
-                <!-- row 2 of 2, includes the high scores table -->
+                <!-- nested row 2 of 3, includes the high scores table -->
                 <div class="row" id="scoreTableDiv">
-                    <div class="col-9" id="aliasCol">
-                        <div class="row" id="aliasTitle"><h4 class="h4">Names</h4></div>
-                        <div class="row oddRow p-1" id="alias1">Comp</div>
+                    <div class="col-9 p-0" id="aliasCol">
+                            <h4 class="h4">Names</h4>
+                        <ul class='list-group mb-1 mr-0' id="aliasList">
+                            <li class="list-group-item">first</li>
+                            <li class="list-group-item">second</li>
+                        </ul>
                     </div>
-                    <div class="col-3" id="scoreCol">
-                        <div class="row" id="scoreTitle"><h4 class="h4">Score</h4></div>
-                        <div class="row oddRow p-1" id="score1">35</div>
+                    <div class="col-3 p-0" id="scoreCol">
+                        <h4 class="h4">Score</h4>
+                        <ul class='list-group' id="scoreList">
+                            <li class="list-group-item">12</li>
+                            <li class="list-group-item">22</li>
+                        </ul>
                     </div>
+                </div>
+                <!-- nested row 3 of 3 -->
+                <div class="row">
+                    <!-- col 1 of 1, takes user name and offers a chance to try again -->
+                    <div class="col-12 col-sm-6 p-0">
+                        <input type="text" class="form-control mb-2" id="alias" placeholder="Enter an alias">
+                    </div>
+                    <div class="col-12 col-sm-6 p-0">
+                        <button type="submit" class="btn" id="aliasBtn">Submit</button>
+                    </div>
+                        <button class="btn d-none w-100" id="againBtn">Try better!</button>
                 </div>
             </div>
             <!-- col 2 of 2 -->
             <div class="col-12 col-sm-4">
                 <h3 class="h3">Comp result - explained</h3>
                 <br>
-                <p>The computer randomly picks answers (so gets them right 1/4 of the time), and doesn't slow down to read the questions.</p>
-            </div>
-        </div>
-        <!-- row 2 of 2 -->
-        <div class="row">
-            <!-- col 1 of 1, takes user name and offers a chance to try again -->
-            <div class="col-12 col-sm-8">
-                <input type="text" class="form-control mb-2" id="alias" placeholder="Enter an alias">
-                <button type="submit" class="btn" id="aliasBtn">Submit</button>
-                <button class="btn d-none w-100" id="againBtn">Try better!</button>
+                <p>The computer randomly picks answers (so gets them right 1/4 of the time), and doesn't slow down to read the questions.Can you beat it?</p>
             </div>
         </div>
     </main>
@@ -59,6 +68,7 @@
         <p class="text-center p-4 mb-0">&copy; 2020 Maria Helbling</p>
     </footer>
     <script src="script.js"></script>
+    <script src="highScore.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
