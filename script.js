@@ -235,7 +235,7 @@ let pickQ = () => {
     let found = false;
     let x;
     while (!found) {
-        x = Math.floor(Math.random()*11);
+        x = Math.floor(Math.random()*21);
         if (!questions[x]['asked']) {
             questions[x]['asked']=true
             found=true
@@ -246,10 +246,14 @@ let pickQ = () => {
 
 // checks answers, adjusts btn color and score, resets settings for new question, checks nr of questions asked
 let checkAnswer = () => {
-    let correctBtn = document.querySelector('.correct');
-    if (clickedBtn.textContent !== questions[q]['a'][questions[q]['correct']]) {sec-=10} //must  add min of sec and 10 if less secs left
+    // let correctBtn = document.querySelector('.correct');
+    let correctBtn = document.querySelector(`[data-index="${questions[q]['correct']}"]`);
+    console.log(correctBtn);
+    if (clickedBtn.getAttribute('data-index') !== questions[q]['correct']) {sec-=10} //must  add min of sec and 10 if less secs left
     correctBtn.style.border='10px solid forestgreen';
+    // wait to display correct answer
     setTimeout(function(){
+        // reset all styles
         correctBtn.style.border='3px solid darkmagenta';
         correctBtn.classList.remove('correct');
         btn0.disabled = false;
@@ -257,6 +261,8 @@ let checkAnswer = () => {
         btn2.disabled = false;
         btn3.disabled = false;
         clueTxt.textContent = '';
+        clickedBtn.active = false;
+        // check if quiz is over
         qNumAsked++;
         if (qNumAsked>=10) {
             score = sec;
@@ -264,6 +270,7 @@ let checkAnswer = () => {
         } else {
             quizMaster();
         }
+
     },1000)
 }
 
@@ -288,9 +295,8 @@ strtBtn.addEventListener('click',function(){
     quizMaster();
     setTime();
     answerBtnDiv.addEventListener('click',function(event){
-        if (event.target === btn0 || event.target === btn1 || event.target === btn2 || event.target === btn3) {
+        if (event.target.matches('button')) {
             clickedBtn = event.target
-            console.log(clickedBtn)
             checkAnswer();
         }
     });
@@ -299,7 +305,6 @@ strtBtn.addEventListener('click',function(){
 // presents questions and waits for reply
 let quizMaster = () => {
         q=pickQ();
-        console.log(q)
         let correct = questions[q]['correct'];
         qTitel.textContent = `Q ${qNumAsked+1} of 10`;
         qText.textContent = questions[q]['q'];
@@ -307,7 +312,6 @@ let quizMaster = () => {
         btn1.textContent = questions[q]['a'][1];
         btn2.textContent = questions[q]['a'][2];
         btn3.textContent = questions[q]['a'][3];
-        document.querySelector(`#btn${correct}`).classList.add('correct');
 }
 
 // clue lifeline actions, prints an additional clue
@@ -320,8 +324,8 @@ clueBtn.addEventListener('click',function(){
 fiftyBtn.addEventListener('click',function(){
     let num1 = questions[q]['fifty'][0];
     let num2 = questions[q]['fifty'][1];
-    document.querySelector(`#btn${num1}`).disabled=true;
-    document.querySelector(`#btn${num2}`).disabled=true;
+    document.querySelector(`[data-index="${num1}"]`).disabled=true;
+    document.querySelector(`[data-index="${num2}"]`).disabled=true;
     fiftyBtn.disabled = true;
     sec-=5;
 });
