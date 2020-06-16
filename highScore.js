@@ -17,6 +17,17 @@ if (!pastScores) {
 
 //write all scores array to page.
 let displayScores = (scoreArr) => {
+    scoreArr.sort(compareFn =(a, b)=>{
+        console.log(a);
+        console.log(b);
+        if (parseInt(a[1]) < parseInt(b[1])) {
+            return 1
+        } else if (parseInt(a[1]) > parseInt(b[1])) {
+            return -1
+        }
+        return 0
+    })
+
     aliasList.textContent='';
     scoreList.textContent='';
 
@@ -27,10 +38,18 @@ let displayScores = (scoreArr) => {
         aliasItem.classList.add('list-group-item')
         scoreItem.classList.add('list-group-item')
         
+        // style every other line
         if ( i%2 === 0 ) {
-            //TODO: not working
             aliasItem.classList.add('evenRow')
             scoreItem.classList.add('evenRow')
+        }
+        // highlight the one just added
+        if (scoreArr[i][0]===aliasInput.value) {
+            aliasItem.style.backgroundColor = 'forestgreen'
+            scoreItem.style.backgroundColor = 'forestgreen'
+            aliasItem.style.Color = 'salmon'
+            scoreItem.style.Color = 'salmon'
+
         }
 
         aliasItem.textContent = scoreArr[i][0]
