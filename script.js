@@ -250,14 +250,13 @@ let pickQ = () => {
 let checkAnswer = () => {
     // let correctBtn = document.querySelector('.correct');
     let correctBtn = document.querySelector(`[data-index="${questions[q]['correct']}"]`);
-    console.log(correctBtn);
-    //TODO: not working, always subtracts 10 !?
-    if (clickedBtn.getAttribute('data-index') !== questions[q]['correct']) {sec-=10} //must  add min of sec and 10 if less secs left
-    correctBtn.style.border='10px solid forestgreen';
+    // check if answer is incorrect to deduct from time
+    if (clickedBtn.getAttribute('data-index') != questions[q]['correct']) {sec-=10} //must  add min of sec and 10 if less secs left
+    correctBtn.style.boxShadow='0 0 30px forestgreen';
     // wait to display correct answer
     setTimeout(function(){
         // reset all styles
-        correctBtn.style.border='3px solid darkmagenta';
+        correctBtn.style.boxShadow='none';
         correctBtn.classList.remove('correct');
         btn0.disabled = false;
         btn1.disabled = false;

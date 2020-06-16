@@ -6,6 +6,7 @@ const scoreList = document.querySelector('#scoreList');
 const againBtn = document.querySelector('#againBtn')
 let pastScores = localStorage.getItem('scoreTable');
 let storedScores;
+
 //read past scores and write them to the page
 if (!pastScores) {
     storedScores = [['Comp',35]];
@@ -58,13 +59,12 @@ displayScores(storedScores);
 // wait for user input
 aliasBtn.addEventListener('click',function(event){
     event.preventDefault();
-    addNewScores(aliasInput.value);
-    displayScores(storedScores);
-    storeNewScores();
     aliasBtn.classList.add('d-none');
     aliasInput.classList.add('d-none');
     againBtn.classList.remove('d-none');
-
+    addNewScores(aliasInput.value);
+    displayScores(storedScores);
+    storeNewScores();
 })
 
 // redirect to retake the quiz
@@ -73,3 +73,8 @@ againBtn.addEventListener('click',function(){
 })
 
     //TODO: sort array to show ranking
+    // loop through to split to two arrays.
+    //create new ordered array
+    //find index of old array
+    //print into new array
+    //print new array to screen
