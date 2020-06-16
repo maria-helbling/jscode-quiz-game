@@ -17,6 +17,7 @@ if (!pastScores) {
 
 //write all scores array to page.
 let displayScores = (scoreArr) => {
+    // sorts the array in descending order (so you see rank)
     scoreArr.sort(compareFn =(a, b)=>{
         console.log(a);
         console.log(b);
@@ -45,11 +46,8 @@ let displayScores = (scoreArr) => {
         }
         // highlight the one just added
         if (scoreArr[i][0]===aliasInput.value) {
-            aliasItem.style.backgroundColor = 'forestgreen'
-            scoreItem.style.backgroundColor = 'forestgreen'
-            aliasItem.style.Color = 'salmon'
-            scoreItem.style.Color = 'salmon'
-
+            aliasItem.style.fontWeight = 'bold'
+            scoreItem.style.fontWeight = 'bold'
         }
 
         aliasItem.textContent = scoreArr[i][0]
@@ -91,9 +89,4 @@ againBtn.addEventListener('click',function(){
     window.location.href = 'index.html';
 })
 
-    //TODO: sort array to show ranking
-    // loop through to split to two arrays.
-    //create new ordered array
-    //find index of old array
-    //print into new array
-    //print new array to screen
+   
