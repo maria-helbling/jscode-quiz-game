@@ -24,6 +24,8 @@ let sec;
 let clickedBtn;
 let score;
 let qNumAsked=0;
+let song = document.createElement('audio');
+song.setAttribute('src', 'letsPlay.mp3');
 // includes all the questions, answers and other properties
 let questions = {
     0: {
@@ -268,7 +270,6 @@ let checkAnswer = () => {
         qNumAsked++;
         if (qNumAsked>=10) {
             score = sec;
-            console.log(score);
             localStorage.setItem('newScore', score);
             window.location.href = 'highscore.html';
         } else {
@@ -282,6 +283,7 @@ let checkAnswer = () => {
 strtBtn.addEventListener('click',function(){
 
     //hide intro text and button to reveal quiz text and answer buttons
+    song.play();
     strtBtn.classList.add('d-none');
     intro.style.display = 'none';
     rules.style.display = 'none';

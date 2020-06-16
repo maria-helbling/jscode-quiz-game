@@ -10,7 +10,6 @@ let storedScores;
 //read past scores and write them to the page
 if (!pastScores) {
     storedScores = [['Comp',35]];
-    console.log(storedScores.length)
 } else {
     storedScores = JSON.parse(pastScores);
 }
@@ -19,8 +18,6 @@ if (!pastScores) {
 let displayScores = (scoreArr) => {
     // sorts the array in descending order (so you see rank)
     scoreArr.sort(compareFn =(a, b)=>{
-        console.log(a);
-        console.log(b);
         if (parseInt(a[1]) < parseInt(b[1])) {
             return 1
         } else if (parseInt(a[1]) > parseInt(b[1])) {
