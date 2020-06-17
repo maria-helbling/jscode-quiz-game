@@ -1,5 +1,7 @@
-# jscode-quiz-game
- Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+# Javascript Code Quiz
+
+ A timed code quiz with multiple-choice questions. This app runs in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. It is responsive, ensuring that it adapts to multiple screen sizes.
+The [deployed page can be seen here](https://maria-helbling.github.io/jscode-quiz-game/).
 
 ## Contents
 
@@ -10,7 +12,8 @@
 5. [Contributing](#contributing)
 
 ## About
-- [ ] screenshots
+Below is the user story and acceptance criteria used as the basisi for this development.
+
 ### User Story
 
 ```
@@ -34,28 +37,32 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 ```
+### Completed product
 
-The following animation demonstrates the application functionality:
+The final project opens on an intro page outlining the rules.
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+![Intro page screenshot](intro.PNG)
+
+After the user START's the quiz, the app cycles through 10 randomly selected questions with answer options.
+
+![Question page screenshot](questions.PNG)
+
+Once the quiz is completed, the user is redirected to the scores page. Once they enter their alias they can see progress in the ranked high-score table.
+
+![High score page screenshot](highscore.PNG)
 
 ### Build
 
-* In HTML semantic tags have been used to aid with accessibility.
-   * HTML validation services were utilised to ensure validiti
+* In HTML semantic tags have been used to aid with accessibility as far as possible.
 * The site is built using Bootstrap.
    * The use of Bootstrap minimises the need for media queries.
-   * Bootstrap grid system allowes for easy portfolio page layout manipulation
-   * Responsive images included for best viewing experience 
    * See [Bootstrap documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/) for customising the site with their provided options
-
-### Specialty issues
+* The  dynamic functionality is built with javascript.
+* The project utilises local storage for score tracking accross pages and sessions.
 
 ### Future plans
 
-- [ ] Adding professional experience page
-- [ ] Adding Modals on Portfolio page for additional details of the projects
-- [ ] Adding skills page
+- [ ] Randomizing which answer options are displayed for each question
 
 ## Setup
 
@@ -66,7 +73,7 @@ git clone https://github.com/maria-helbling/jscode-quiz-game.git
 
 ## Credits
 
-
+The starting music is from Who wants to be a Millionaire. As are two of the three Lifeline option ideas.
 
 ## License
 
