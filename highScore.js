@@ -1,3 +1,4 @@
+//grab my DOM and storage elements
 let newScore = localStorage.getItem('newScore');
 const aliasInput = document.querySelector('#alias');
 const aliasBtn = document.querySelector('#aliasBtn');
@@ -7,14 +8,14 @@ const againBtn = document.querySelector('#againBtn')
 let pastScores = localStorage.getItem('scoreTable');
 let storedScores;
 
-//read past scores and write them to the page
+//read past scores or populate empty array
 if (!pastScores) {
     storedScores = [['Comp',35]];
 } else {
     storedScores = JSON.parse(pastScores);
 }
 
-//write all scores array to page.
+//function to write all scores array to page.
 let displayScores = (scoreArr) => {
     // sorts the array in descending order (so you see rank)
     scoreArr.sort(compareFn =(a, b)=>{
@@ -25,35 +26,36 @@ let displayScores = (scoreArr) => {
         }
         return 0
     })
-
+    //restart list
     aliasList.textContent='';
     scoreList.textContent='';
 
-    for (i=0; i<scoreArr.length; i++) {
-        //create two list items, add classes from bootstrap as well as 'evenRow' for odd rows
+    //display scores on page
+    scoreArr.forEach((value,index) => {
+        //create two list items, add classes from bootstrap
         let aliasItem = document.createElement('li');
         let scoreItem = document.createElement('li');
         aliasItem.classList.add('list-group-item')
         scoreItem.classList.add('list-group-item')
         
-        // style every other line
-        if ( i%2 === 0 ) {
+        // style every other line for ease of reading
+        if ( index%2 === 0 ) {
             aliasItem.classList.add('evenRow')
             scoreItem.classList.add('evenRow')
         }
         // highlight the one just added
-        if (scoreArr[i][0]===aliasInput.value) {
+        if (value[0]===aliasInput.value) {
             aliasItem.style.fontWeight = 'bold'
             scoreItem.style.fontWeight = 'bold'
         }
 
-        aliasItem.textContent = scoreArr[i][0]
-        scoreItem.textContent = scoreArr[i][1]
+        aliasItem.textContent = value[0]
+        scoreItem.textContent = value[1]
 
         //append li's to respective ul
         aliasList.appendChild(aliasItem);
         scoreList.appendChild(scoreItem);
-    }
+    })
 }
 
 //add alias + neew score to all scores array

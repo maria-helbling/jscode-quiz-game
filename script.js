@@ -250,12 +250,11 @@ let pickQ = () => {
 
 // checks answers, adjusts btn color and score, resets settings for new question, checks nr of questions asked
 let checkAnswer = () => {
-    // let correctBtn = document.querySelector('.correct');
     let correctBtn = document.querySelector(`[data-index="${questions[q]['correct']}"]`);
     // check if answer is incorrect to deduct from time
-    if (clickedBtn.getAttribute('data-index') != questions[q]['correct']) {sec-=10} //must  add min of sec and 10 if less secs left
+    if (clickedBtn.getAttribute('data-index') != questions[q]['correct']) {sec-= Math.min(sec, 10)} 
+    //Show the right answer to user if they got it wrong and wait 1 sec so they see it
     correctBtn.style.boxShadow='0 0 30px forestgreen';
-    // wait to display correct answer
     setTimeout(function(){
         // reset all styles
         correctBtn.style.boxShadow='none';
@@ -279,14 +278,26 @@ let checkAnswer = () => {
     },1000)
 }
 
+// presents questions
+let quizMaster = () => {
+    q=pickQ();
+    let correct = questions[q]['correct'];
+    qTitel.textContent = `Q ${qNumAsked+1} of 10`;
+    qText.textContent = questions[q]['q'];
+    btn0.textContent = questions[q]['a'][0];
+    btn1.textContent = questions[q]['a'][1];
+    btn2.textContent = questions[q]['a'][2];
+    btn3.textContent = questions[q]['a'][3];
+}
+
 // sets up html elements and starts the quiz
 strtBtn.addEventListener('click',function(){
 
     //hide intro text and button to reveal quiz text and answer buttons
     song.play();
     strtBtn.classList.add('d-none');
-    intro.style.display = 'none';
-    rules.style.display = 'none';
+    intro.classList.add('d-none');
+    rules.classList.add('d-none');
     clueBtn.classList.remove('d-none');
     fiftyBtn.classList.remove('d-none');
     friendBtn.classList.remove('d-none');
@@ -300,6 +311,7 @@ strtBtn.addEventListener('click',function(){
     sec=120;
     quizMaster();
     setTime();
+    //wait for answer from user
     answerBtnDiv.addEventListener('click',function(event){
         if (event.target.matches('button')) {
             clickedBtn = event.target
@@ -307,18 +319,6 @@ strtBtn.addEventListener('click',function(){
         }
     });
 })
-
-// presents questions
-let quizMaster = () => {
-        q=pickQ();
-        let correct = questions[q]['correct'];
-        qTitel.textContent = `Q ${qNumAsked+1} of 10`;
-        qText.textContent = questions[q]['q'];
-        btn0.textContent = questions[q]['a'][0];
-        btn1.textContent = questions[q]['a'][1];
-        btn2.textContent = questions[q]['a'][2];
-        btn3.textContent = questions[q]['a'][3];
-}
 
 // clue lifeline actions, prints an additional clue
 clueBtn.addEventListener('click',function(){ 
@@ -338,8 +338,8 @@ fiftyBtn.addEventListener('click',function(){
 
 //friend lifeline actions: picks an answer to suggest and prints it
 friendBtn.addEventListener('click',function(){
-    let num = Math.floor(Math.random()*5)+1;
-    if (num<5) {
+    let num = Math.floor(Math.random()*5);
+    if (num<4) {
         clueTxt.textContent = `I think it is "${questions[q]['a'][questions[q]['correct']]}"`;
     } else {
         clueTxt.textContent = `I think it is "${questions[q]['a'][questions[q]['friend']]}"`;
