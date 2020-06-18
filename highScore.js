@@ -4,7 +4,8 @@ const aliasInput = document.querySelector('#alias');
 const aliasBtn = document.querySelector('#aliasBtn');
 const aliasList = document.querySelector('#aliasList');
 const scoreList = document.querySelector('#scoreList');
-const againBtn = document.querySelector('#againBtn')
+const againBtn = document.querySelector('#againBtn');
+const clearBtn = document.querySelector('#clear')
 let pastScores = localStorage.getItem('scoreTable');
 let storedScores;
 
@@ -88,4 +89,13 @@ againBtn.addEventListener('click',function(){
     window.location.href = 'index.html';
 })
 
+clearBtn.addEventListener('click',function(){
+        //restart list
+        aliasList.textContent='';
+        scoreList.textContent='';
+        storedScores = [['Comp',35]];
+        displayScores(storedScores);
+        storeNewScores();
+        storedScores = JSON.parse(storedScores);
+})
    

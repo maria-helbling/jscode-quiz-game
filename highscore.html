@@ -22,17 +22,17 @@
             <div class="col-12 col-sm-8">
                 <!-- nested row 1 of 3, for title -->
                 <div class="row">
-                    <div class="col-12 p-0">
+                    <div class="col-9 p-1">
                         <h2 class="h2">High Scores</h2>
                     </div>
                 </div>
                 <!-- nested row 2 of 3, includes the high scores table -->
                 <div class="row" id="scoreTableDiv">
-                    <div class="col-9 p-0" id="aliasCol">
+                    <div class="col-9 p-1" id="aliasCol">
                             <h4 class="h4">Names</h4>
                         <ul class='list-group mb-1 mr-0' id="aliasList"></ul>
                     </div>
-                    <div class="col-3 p-0" id="scoreCol">
+                    <div class="col-3 p-1" id="scoreCol">
                         <h4 class="h4">Score</h4>
                         <ul class='list-group' id="scoreList"></ul>
                     </div>
@@ -40,20 +40,25 @@
                 <!-- nested row 3 of 3 -->
                 <div class="row">
                     <!-- col 1 of 1, takes user name and offers a chance to try again -->
-                    <div class="col-12 col-sm-6 p-0">
+                    <div class="col-12 col-sm-6 p-1">
                         <input type="text" class="form-control mb-2" id="alias" placeholder="Enter an alias">
                     </div>
-                    <div class="col-12 col-sm-6 p-0">
-                        <button type="submit" class="btn" id="aliasBtn">Submit</button>
+                    <div class="col-12 col-sm-6 p-1">
+                        <button type="submit" class="btn mb-2" id="aliasBtn">Submit</button>
                     </div>
                         <button class="btn d-none w-100" id="againBtn">Try better!</button>
+                        
                 </div>
             </div>
             <!-- col 2 of 2 -->
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-4 p-1">
+                <button class="btn w-100" id="clear">Clear Leaderboard</button>
+                <hr>
                 <h3 class="h3">Comp result - explained</h3>
                 <br>
                 <p>The computer randomly picks answers (so gets them right 1/4 of the time), and doesn't slow down to read the questions. Can you beat it?</p>
+                <hr>
+                
             </div>
         </div>
     </main>
